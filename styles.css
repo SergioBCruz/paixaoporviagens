@@ -125,6 +125,14 @@ a:hover {
   box-shadow: var(--shadow);
 }
 
+.legal-note {
+  font-size: 0.95rem;
+  color: #92400e;
+  border-radius: var(--radius);
+  border: 1px solid #f59e0b;
+  background: #fff7ed;
+}
+
 .icon-badge {
   width: 48px;
   height: 48px;

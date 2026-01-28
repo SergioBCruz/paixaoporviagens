@@ -1,9 +1,10 @@
-// Configuração simples de parceiros (troque pelas URLs com seus IDs de afiliado)
-const affiliateLinks = {
-  kayak: 'https://www.kayak.com.br/flights',
-  skyscanner: 'https://www.skyscanner.com.br',
-  decolar: 'https://www.decolar.com',
-  booking: 'https://www.booking.com/flights'
+// URLs de busca afiliadas (substitua pelos seus deep links oficiais)
+const affiliateSearchLinks = {
+  kayak: 'https://www.kayak.com.br/flights/POA-LON',
+  skyscanner: 'https://www.skyscanner.com.br/transport/flights/POA/LON/',
+  travelpayouts: 'https://emrldtp.cc/NDkzMjQ5?origin=POA&destination=LON&adults=1&depart_date=2026-02-05&return_date=2026-02-17',
+  decolar: 'https://www.decolar.com/shop/flights/results/roundtrip/POA/LON/2026-02-05/2026-02-17/1/0/0/NA/NA/NA/NA/NA',
+  booking: 'https://www.booking.com/flights/POA.LON.html'
 };
 
 const searchForm = document.getElementById('searchForm');
@@ -15,23 +16,11 @@ function validateDates(ida, volta) {
 }
 
 function renderMockResults(formData) {
-  const { origem, destino, dataIda, dataVolta, passageiros } = formData;
+  // Simulação sem preços fixos para evitar oferta enganosa
   const mock = [
-    {
-      title: `${origem} → ${destino}`,
-      price: 'R$ 2.550',
-      tag: 'Melhor custo-benefício'
-    },
-    {
-      title: `${origem} → ${destino}`,
-      price: 'R$ 2.320',
-      tag: 'Tarifa flexível'
-    },
-    {
-      title: `${origem} → ${destino}`,
-      price: 'R$ 2.980',
-      tag: 'Direto + bagagem'
-    }
+    { title: 'Porto Alegre → Londres', tag: 'Melhor custo-benefício' },
+    { title: 'Porto Alegre → Londres', tag: 'Tarifa flexível' },
+    { title: 'Porto Alegre → Londres', tag: 'Direto + bagagem' }
   ];
 
   resultsGrid.innerHTML = mock
@@ -41,13 +30,14 @@ function renderMockResults(formData) {
         <div class="deal-card p-4 h-100">
           <div class="d-flex justify-content-between align-items-center mb-2">
             <span class="badge bg-primary">${item.tag}</span>
-            <span class="text-muted small">${passageiros} pax</span>
+            <span class="text-muted small">1 pax</span>
           </div>
           <h3 class="h6 mb-2">${item.title}</h3>
-          <p class="text-muted mb-3">Ida: ${dataIda} · Volta: ${dataVolta}</p>
+          <p class="text-muted mb-2">Ida: 2026-02-05 · Volta: 2026-02-17</p>
+          <p class="text-muted small mb-3">Preço variável conforme datas e disponibilidade</p>
           <div class="d-flex justify-content-between align-items-center">
-            <span class="fw-bold text-primary">${item.price}</span>
-            <button class="btn btn-outline-primary btn-sm" data-redirect="${formData.partner}">Ver oferta</button>
+            <span class="fw-semibold text-primary">Consulte o preço atualizado</span>
+            <button class="btn btn-outline-primary btn-sm" data-redirect="${formData.partner}">Ver preços atualizados</button>
           </div>
         </div>
       </div>`
@@ -58,8 +48,8 @@ function renderMockResults(formData) {
 }
 
 function redirectToPartner(partnerKey) {
-  // Centraliza o redirecionamento; substitua a URL no objeto affiliateLinks acima
-  const url = affiliateLinks[partnerKey] || affiliateLinks.kayak;
+  // Centraliza o redirecionamento; troque URLs em affiliateSearchLinks para seus IDs
+  const url = affiliateSearchLinks[partnerKey] || affiliateSearchLinks.kayak;
   window.open(url, '_blank');
 }
 
