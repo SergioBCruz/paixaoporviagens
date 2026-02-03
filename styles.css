@@ -224,6 +224,8 @@ a:hover {
 .widget-stack {
   display: grid;
   gap: 1.5rem;
+  justify-items: center;
+  text-align: center;
 }
 
 .netlify-hidden {
