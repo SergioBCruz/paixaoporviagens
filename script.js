@@ -14,11 +14,8 @@ const travelpayoutsLinks = {
 
 // URLs de busca afiliadas (substitua pelos seus deep links oficiais)
 const affiliateSearchLinks = {
-  kayak: 'https://www.kayak.com.br/flights/POA-LON',
-  skyscanner: 'https://www.skyscanner.com.br/transport/flights/POA/LON/',
-  travelpayouts: null, // gerado dinamicamente por generateFlightDeepLink
-  decolar: 'https://www.decolar.com/shop/flights/results/roundtrip/POA/LON/2026-02-05/2026-02-17/1/0/0/NA/NA/NA/NA/NA',
-  booking: 'https://www.booking.com/flights/POA.LON.html'
+  kiwi: 'https://www.kiwi.com/br/buscar/resultados/POA/LON?adults=1&children=0&infants=0&currency=BRL',
+  travelpayouts: null // gerado dinamicamente por generateFlightDeepLink
 };
 
 let lastSearchFormData = null;
@@ -87,7 +84,7 @@ function renderMockResults(formData) {
 
 function redirectToPartner(partnerKey) {
   // Centraliza o redirecionamento; troque URLs em affiliateSearchLinks para seus IDs
-  const url = affiliateSearchLinks[partnerKey] || affiliateSearchLinks.kayak;
+  const url = affiliateSearchLinks[partnerKey] || affiliateSearchLinks.kiwi;
   window.open(url, '_blank');
 }
 

@@ -1,9 +1,9 @@
 :root {
-  --bg-gradient: radial-gradient(circle at 10% 20%, #1e88e5 0, rgba(23, 42, 87, 0.95) 35%, #0a0f24 100%);
+  --bg-gradient: radial-gradient(circle at 10% 20%, #15243e 0, rgba(8, 19, 40, 0.95) 35%, #050c1a 100%);
   --card-bg: rgba(255, 255, 255, 0.08);
   --glass: rgba(255, 255, 255, 0.12);
-  --primary: #ff6b35;
-  --primary-dark: #e35a2b;
+  --primary: #00ae98;
+  --primary-dark: #00917f;
   --text-dark: #0f172a;
   --muted: #6b7280;
   --border: rgba(255, 255, 255, 0.12);
@@ -114,8 +114,8 @@ a:hover {
 }
 
 .partner-card.highlight {
-  background: linear-gradient(135deg, #ffeadf, #fff2e9);
-  border-color: #ffd7c4;
+  background: linear-gradient(135deg, #e2f7f4, #f3fffd);
+  border-color: #b7efe6;
 }
 
 .benefit-card {
@@ -125,13 +125,21 @@ a:hover {
   box-shadow: var(--shadow);
 }
 
+.legal-note {
+  font-size: 0.95rem;
+  color: #92400e;
+  border-radius: var(--radius);
+  border: 1px solid #f59e0b;
+  background: #fff7ed;
+}
+
 .icon-badge {
   width: 48px;
   height: 48px;
   display: grid;
   place-items: center;
   border-radius: 12px;
-  background: rgba(255, 107, 53, 0.12);
+  background: rgba(0, 174, 152, 0.12);
   font-size: 22px;
 }
 
@@ -152,6 +160,61 @@ a:hover {
 .btn-primary:hover {
   background-color: var(--primary-dark);
   border-color: var(--primary-dark);
+}
+
+.btn-success {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-success:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+
+.contact-section {
+  background: radial-gradient(circle at 20% 20%, rgba(0, 174, 152, 0.15), transparent 35%),
+    radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.06), transparent 40%),
+    #0a1024;
+}
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  box-shadow: var(--shadow);
+}
+
+.contact-card .form-control {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.contact-card .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-card .form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.2rem rgba(0, 174, 152, 0.2);
+}
+
+.eyebrow {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.widget-stack {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.netlify-hidden {
+  display: none;
 }
 
 @media (max-width: 992px) {

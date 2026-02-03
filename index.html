@@ -85,11 +85,7 @@
                 <div class="col-md-6">
                   <label class="form-label">Site parceiro</label>
                   <select class="form-select" id="partner">
-                    <option value="kayak" selected>Kayak</option>
-                    <option value="skyscanner">Skyscanner</option>
-                    <option value="travelpayouts">Travelpayouts</option>
-                    <option value="decolar">Decolar</option>
-                    <option value="booking">Booking</option>
+                    <option value="kiwi" selected>Kiwi.com</option>
                   </select>
                 </div>
                 <div class="col-12">
@@ -118,6 +114,12 @@
       <div class="legal-note alert alert-warning mt-4" role="status">
         Os preços e condições são definidos pelas companhias aéreas e parceiros. Este site não vende passagens. Os valores podem variar conforme datas, disponibilidade e regras tarifárias.
       </div>
+
+      <div class="widget-stack mt-5">
+        <script async src="https://tpwdgt.com/content?currency=usd&trs=494137&shmarker=699629&locale=en&powered_by=true&limit=4&primary_color=00AE98&results_background_color=FFFFFF&form_background_color=FFFFFF&promo_id=4563&campaign_id=111" charset="utf-8"></script>
+        <script async src="https://tpwdgt.com/content?currency=usd&trs=494137&shmarker=699629&locale=en&stops=any&show_hotels=true&powered_by=true&border_radius=0&plain=true&color_button=%2300A991&color_button_text=%23ffffff&promo_id=3414&campaign_id=111" charset="utf-8"></script>
+        <script async src="https://tpwdgt.com/content?currency=usd&trs=494137&shmarker=699629&powered_by=true&locale=en&show_header=true&limit=3&primary_color=00AE98&results_background_color=FFFFFF&form_background_color=FFFFFF&campaign_id=111&promo_id=4478" charset="utf-8"></script>
+      </div>
     </section>
 
     <section id="ofertas" class="section-padding">
@@ -138,7 +140,7 @@
               </div>
               <h3 class="h5">São Paulo → Lisboa</h3>
                 <p class="text-muted">Confira preços atualizados com o parceiro.</p>
-                <button class="btn btn-primary w-100" data-redirect="kayak">Buscar passagens</button>
+                <button class="btn btn-primary w-100" data-redirect="kiwi">Buscar passagens</button>
             </div>
           </div>
           <div class="col-md-4">
@@ -149,7 +151,7 @@
               </div>
               <h3 class="h5">Rio de Janeiro → Buenos Aires</h3>
                 <p class="text-muted">Consulte valores em tempo real.</p>
-                <button class="btn btn-primary w-100" data-redirect="skyscanner">Buscar passagens</button>
+                <button class="btn btn-primary w-100" data-redirect="kiwi">Buscar passagens</button>
             </div>
           </div>
           <div class="col-md-4">
@@ -160,7 +162,7 @@
               </div>
               <h3 class="h5">Brasília → Orlando</h3>
                 <p class="text-muted">Valores sujeitos à disponibilidade.</p>
-                <button class="btn btn-primary w-100" data-redirect="decolar">Buscar passagens</button>
+                <button class="btn btn-primary w-100" data-redirect="kiwi">Buscar passagens</button>
             </div>
           </div>
         </div>
@@ -194,10 +196,7 @@
           </div>
         </div>
         <div class="row g-3 partner-grid">
-          <a class="partner-card highlight" href="https://www.kayak.com.br" target="_blank" rel="noopener">Kayak</a>
-          <a class="partner-card" href="https://www.skyscanner.com.br" target="_blank" rel="noopener">Skyscanner</a>
-          <a class="partner-card" href="https://www.decolar.com" target="_blank" rel="noopener">Decolar</a>
-          <a class="partner-card" href="https://www.booking.com" target="_blank" rel="noopener">Booking</a>
+          <a class="partner-card highlight" href="https://www.kiwi.com" target="_blank" rel="noopener">Kiwi.com</a>
         </div>
       </div>
     </section>
@@ -235,9 +234,61 @@
         </div>
       </div>
     </section>
+
+    <section id="contato" class="contact-section section-padding">
+      <div class="container">
+        <div class="row g-4 align-items-center mb-4">
+          <div class="col-lg-7">
+            <p class="eyebrow">Contato</p>
+            <h2 class="fw-bold text-white mb-2">Fale agora</h2>
+            <p class="text-white-50 mb-0">Retorno rápido com um plano claro, prazo e valor justo. Se preferir, chame direto no WhatsApp.</p>
+          </div>
+          <div class="col-lg-5 text-lg-end d-flex gap-3 justify-content-lg-end justify-content-start">
+            <a class="btn btn-success btn-lg" href="https://wa.me/34711086870" target="_blank" rel="noopener">Abrir WhatsApp</a>
+            <a class="btn btn-outline-light btn-lg" href="https://wa.me/34711086870" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-5">
+            <div class="contact-card d-flex flex-column justify-content-center h-100">
+              <h3 class="h5 text-white mb-2">WhatsApp</h3>
+              <p class="text-white-50 mb-4">Atendimento direto com o desenvolvedor.</p>
+              <a class="btn btn-success btn-lg w-100" href="https://wa.me/34711086870" target="_blank" rel="noopener">Abrir WhatsApp</a>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="contact-card h-100">
+              <form class="row g-3" name="contato-site" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="contato-site" />
+                <div class="netlify-hidden">
+                  <label>Não preencha: <input name="bot-field" /></label>
+                </div>
+                <div class="col-12">
+                  <label class="form-label text-white" for="nomeContato">Nome</label>
+                  <input class="form-control" id="nomeContato" name="nomeContato" placeholder="Seu nome" required />
+                </div>
+                <div class="col-12">
+                  <label class="form-label text-white" for="emailContato">Email</label>
+                  <input class="form-control" type="email" id="emailContato" name="emailContato" placeholder="voce@email.com" required />
+                </div>
+                <div class="col-12">
+                  <label class="form-label text-white" for="mensagemContato">Mensagem</label>
+                  <textarea class="form-control" id="mensagemContato" name="mensagemContato" rows="4" placeholder="Contexto do projeto, meta e prazo desejado" required></textarea>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-primary w-100 btn-lg" type="submit">Enviar briefing rápido</button>
+                  <p class="text-white-50 small mt-3 mb-0">Retorno em poucas horas com proposta e próximos passos.</p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer id="contato" class="footer py-5">
+  <footer class="footer py-5">
     <div class="container">
       <div class="row g-4">
         <div class="col-md-4">
