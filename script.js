@@ -106,32 +106,34 @@ function redirectWithFormData(partnerKey, formData) {
   redirectToPartner(partnerKey);
 }
 
-searchForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const formData = {
-    origem: searchForm.origem.value.trim(),
-    destino: searchForm.destino.value.trim(),
-    dataIda: searchForm.dataIda.value,
-    dataVolta: searchForm.dataVolta.value,
-    passageiros: searchForm.passageiros.value,
-    partner: document.getElementById('partner').value
-  };
+if (searchForm) {
+  searchForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const formData = {
+      origem: searchForm.origem.value.trim(),
+      destino: searchForm.destino.value.trim(),
+      dataIda: searchForm.dataIda.value,
+      dataVolta: searchForm.dataVolta.value,
+      passageiros: searchForm.passageiros.value,
+      partner: document.getElementById('partner').value
+    };
 
-  if (!formData.origem || !formData.destino) {
-    messageEl.textContent = 'Preencha origem e destino.';
-    return;
-  }
+    if (!formData.origem || !formData.destino) {
+      messageEl.textContent = 'Preencha origem e destino.';
+      return;
+    }
 
-  if (!validateDates(formData.dataIda, formData.dataVolta)) {
-    messageEl.textContent = 'A data de volta deve ser igual ou posterior à ida.';
-    return;
-  }
+    if (!validateDates(formData.dataIda, formData.dataVolta)) {
+      messageEl.textContent = 'A data de volta deve ser igual ou posterior à ida.';
+      return;
+    }
 
-  messageEl.textContent = '';
-  renderMockResults(formData);
-  lastSearchFormData = formData;
-  redirectWithFormData(formData.partner, formData);
-});
+    messageEl.textContent = '';
+    renderMockResults(formData);
+    lastSearchFormData = formData;
+    redirectWithFormData(formData.partner, formData);
+  });
+}
 
 // Handler para botões de ofertas fixas
 function bindDealButtons() {
